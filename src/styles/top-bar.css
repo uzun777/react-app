@@ -1,0 +1,15 @@
+.Top-ul li {
+    list-style-type: none; /* Убираем маркеры */
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    border: 1px solid #000; /* Рамка вокруг текста */
+    padding: 3px; /* Поля вокруг текста */
+    background-color: rgb(216, 193, 193);
+   }
+
+
+.Student-Ul li{
+    list-style-type: none;
+    display: inline;
+    margin-right: 5px;
+}
