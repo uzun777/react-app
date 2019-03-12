@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-export default class Link extends Component{
-   constructor(props){
-       super(props);
-       this.link = props.link;
-       this.text = props.text;
-   }
-
-    render(){
-        return(
-             <a href={this.link}>{this.text}</a>
-           
-        )
-    }
+export default class Link extends Component {
+  render() {
+    const { link, text } = this.props;
+    return (
+      <li>
+        <a href={link}>{text}</a>
+      </li>
+    );
+  }
 }

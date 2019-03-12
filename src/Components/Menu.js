@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import MenuElements from './MenuElements'
 
 export default class Menu extends Component{
-    constructor(props){
-        super(props);
-        this.Name = props.Name;
-    }
+
     render(){
+
         return(
-           "Меню"
+           <MenuElements data={
+               [
+                   {
+                       link:"google.com",
+                       text:"first item"
+                   },
+                   {
+                    link:"yahoo.com",
+                    text:"second item"
+                }
+               ]
+           } />
         )
     }
 }

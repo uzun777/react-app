@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
-import Link from './Link'
-import Menu from './Menu'
-import '../styles/top-bar.css'
+import React, { Component } from "react";
+import Menu from "./Menu";
+import Company from "./CompanyName";
+import LinkList from "./LinkList";
 
-export default class Top extends Component{
-    constructor(props){
-        super(props);
-        this.Name = props.Name;
-    }
-    render(){
-        return(
-            <div>
-            <ul className="Top-ul">
-           <li key="Company-Name">{this.Name}</li>
-           <li key="0"><Link text="Link1" link="https://mail.ru" /></li>
-           <li key="1"><Link text="Link2" link="https://google.ru" /></li>
-           <li key="2"><Link text="Link3" link="https://yandex.ru" /></li>
-           <li key="Menu"><Menu/></li>
-           </ul>
-           </div>
-        
-        )
-    }
+export default class Top extends Component {
+  render() {
+    let d = [
+      {
+        link: "mail.ru",
+        text: "Майл ру"
+      },
+      {
+        link: "yandex.ru",
+        text: "Яндекс"
+      }
+    ];
+    return (
+      <div>
+        <ul >
+
+          <li>
+            <Company
+              Name="Ruby"
+              LogoUrl="https://cdn.shopifycloud.com/hatchful-web/assets/2adcef6c1f7ab8a256ebdeba7fceb19f.png"
+            />
+          </li>
+
+          <li>
+            <LinkList data={d} />
+          </li>
+
+          <li>
+            <Menu />
+          </li>
+
+        </ul>
+      </div>
+    );
+  }
 }
