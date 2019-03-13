@@ -7,6 +7,6 @@ export default class LinkList extends Component {
       <Link link={el.link} text={el.text} />
     ));
 
-    return <ul >{LinkElemets}</ul>;
+    return <ul className="LinkElemets">{LinkElemets}</ul>;
   }
 }

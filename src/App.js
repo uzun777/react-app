@@ -8,7 +8,7 @@ function App() {
     // <Article article={news[0]} />
     // <ArticleList article={articles[3]} />
     <div>
-    <Top  myName="Company Name"/>
+    <Top myName="Company Name"/>
     <Body/>
     </div>
   )

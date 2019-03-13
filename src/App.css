@@ -32,14 +32,50 @@
   }
 }
 
-li{
-  margin-left: 5px;
-  display: inline-block;
-  text-align: center;
-  
-  
+
+
+ul.top {
+  display: flex;
+  background-color: rgb(250, 0, 0);
+  margin: 0; /* Обнуляем значение отступов */
+  padding: 0px;
 }
 
-.Body-li{
-  display: inline;
+ .top li{
+    display: block;
+    
 }
+
+.LinkElemets{
+  display: flex;
+  margin-left: 5px;
+  padding: 0px;
+}
+
+.LinkElemets li{
+  display: inline; /* Отображать как строчный элемент */
+  margin-right: 5px; /* Отступ слева */
+ 
+}
+
+.MenuItems{
+  padding: 0px; /* Значение полей */
+}
+
+.Students{
+  padding: 0px;
+  margin-top: 10px;
+  text-align: center;
+ 
+  display: inline-flexbox;
+  background-color: rgb(238, 2, 2);
+}
+
+.Students li{
+  list-style-type: none;
+}
+.body h6{
+  text-align: center;
+}
+
+

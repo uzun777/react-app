@@ -5,7 +5,7 @@ export default class Link extends Component {
     const { link, text } = this.props;
     return (
       <li>
-        <a href={link}>{text}</a>
+       <p> <a href={link}>{text}</a></p>
       </li>
     );
   }

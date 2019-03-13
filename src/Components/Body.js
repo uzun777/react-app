@@ -11,7 +11,7 @@ export default class Body extends Component {
 
   render() {
     return (
-      <div>
+      <div className="body">
         <h6>Список студентов</h6>
         <StudentList data={ListOfStudents} />
         <Button

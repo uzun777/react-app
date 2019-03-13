@@ -7,35 +7,28 @@ export default class Top extends Component {
   render() {
     let d = [
       {
-        link: "mail.ru",
-        text: "Майл ру"
+        link: "/",
+        text: "Главная"
       },
       {
-        link: "yandex.ru",
-        text: "Яндекс"
+        link: "",
+        text: "Форум"
       }
     ];
     return (
-      <div>
-        <ul >
+      <ul className="top">
+        <li>
+          <Company Name="Site Name"/>
+        </li>
 
-          <li>
-            <Company
-              Name="Ruby"
-              LogoUrl="https://cdn.shopifycloud.com/hatchful-web/assets/2adcef6c1f7ab8a256ebdeba7fceb19f.png"
-            />
-          </li>
+        <li>
+          <LinkList data={d} />
+        </li>
 
-          <li>
-            <LinkList data={d} />
-          </li>
-
-          <li>
-            <Menu />
-          </li>
-
-        </ul>
-      </div>
+        <li>
+          <Menu />
+        </li>
+      </ul>
     );
   }
 }
