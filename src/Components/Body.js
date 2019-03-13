@@ -54,7 +54,6 @@ export default class Body extends Component {
             this.setState({
               lockAll: !this.state.lockAll,
             })
-            // this.lockAll=!this.lockAll
           }
         />
       </div>
