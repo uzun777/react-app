@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Student from "./Student"
 
-export default function StudentList(props) {
-    let StudentElements = props.data.map(student =>
-        <Student Name={student.Name} Age={student.Age} Photo={student.Photo}/>)
+export default class StudentList extends Component {
+   render(){
 
+    let StudentElements = this.props.data.map(student =>
+        <Student Name={student.Name} Age={student.Age} Photo={student.Photo}/>)
        
     return(
         StudentElements
     )
+
+   }
 }

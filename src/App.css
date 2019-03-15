@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -32,50 +33,89 @@
   }
 }
 
+.global{
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,0.6923144257703081) 50%);
+}
 
 
-ul.top {
-  display: flex;
-  background-color: rgb(250, 0, 0);
-  margin: 0; /* Обнуляем значение отступов */
+
+.top ul {
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  margin: 0px;
   padding: 0px;
+  background: rgb(243, 166, 0);
 }
 
- .top li{
-    display: block;
-    
+ul.MainListMenu li{
+  margin-left:10px;
+  display: inline-block;
 }
 
-.LinkElemets{
-  display: flex;
-  margin-left: 5px;
-  padding: 0px;
+
+.Menu ul{
+  display: none;
 }
 
-.LinkElemets li{
-  display: inline; /* Отображать как строчный элемент */
-  margin-right: 5px; /* Отступ слева */
- 
+
+
+.Menu:hover ul{
+  width: auto;
+  padding-left:20px;
+  margin-left: -10px;;
+  padding-right: 10px;
+  display: inline;
+  position: absolute;
+
+}
+  
+
+.Menu ul li{
+  margin-left: -10px;
+ display: inline;
 }
 
-.MenuItems{
-  padding: 0px; /* Значение полей */
-}
 
-.Students{
+
+
+.Students {
   padding: 0px;
   margin-top: 10px;
   text-align: center;
- 
+
   display: inline-flexbox;
-  background-color: rgb(238, 2, 2);
+  /*background-color: rgb(238, 2, 2); */
 }
 
-.Students li{
+.Students li {
   list-style-type: none;
 }
-.body h6{
+.body h6 {
   text-align: center;
 }
 
+.bottom {
+ /* background-color: rgb(8, 143, 206); */
+  text-align: center;
+}
 
+.bottom ul {
+  display: inline-flex;
+}
+
+.bottom .Banner {
+  text-align: center;
+  list-style-type: none;
+  margin: 0px;
+  padding: 10px;
+}
+
+.bottom li {
+  list-style-type: none;
+}
+
+.bottom .Banner:hover {
+  border: 1px solid;
+}

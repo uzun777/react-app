@@ -16,7 +16,8 @@ export default class Top extends Component {
       }
     ];
     return (
-      <ul className="top">
+      <div className="top">
+      <ul className="MainListMenu">
         <li>
           <Company Name="Site Name"/>
         </li>
@@ -25,10 +26,11 @@ export default class Top extends Component {
           <LinkList data={d} />
         </li>
 
-        <li>
+        <li className="Menu">
           <Menu />
         </li>
       </ul>
+      </div>
     );
   }
 }

@@ -7,9 +7,9 @@ export default class MenuElements extends Component{
             <Link link={el.link} text={el.text} />
           ));
         return(
-          <div className="Menu">
+          <div>
           <p>Меню</p>
-          <ul className="MenuItems"> {elements}</ul>
+          <ul> {elements}</ul>
           </div>
         )
     }
