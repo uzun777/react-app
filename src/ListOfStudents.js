@@ -13,7 +13,7 @@ export default [
     },
     {
         "id": "3",
-        "Name": "Полещук Анатолий Генадьевич",
+        "Name": "ю",
         "Age": "35 лет",
         "Photo": "https://www.spbgasu.ru/upload-files/vuz_v_licah/Ivanov_II.jpg"
     }
