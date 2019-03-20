@@ -7,7 +7,9 @@ export default class Body extends Component {
   state = {
     pressed: 0,
     lockAll: false,
-    text: ''
+    text: '',
+    data: []
+
   };
 
 
@@ -17,12 +19,18 @@ export default class Body extends Component {
     this.setState({ text: value});
   }
 
+ async componentDidMount(){
+   let b = await fetch("https://swapi.co/api/people/").then(r => r.json());   
+   this.setState({data: b.results})
+  }
+
   render() {
 
     const newData = ListOfStudents.filter(
       item => item.Name.toLowerCase().search(this.state.text) !== -1
     );
-    console.log(newData, this.state.text);
+   
+     console.log(this.state.data)
 
     return (
       <div className="body">
@@ -37,10 +45,10 @@ export default class Body extends Component {
         }>Clear</button>
         </div>
 
+       
 
-
-        {<StudentList data={ListOfStudents.filter(
-          item => item.Name.toLowerCase().search(this.state.text) !== -1
+        {<StudentList data={this.state.data.filter(
+          item => item.name.toLowerCase().search(this.state.text) !== -1
         )} />}
 
 

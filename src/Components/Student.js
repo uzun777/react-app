@@ -2,14 +2,14 @@ import React, { Component } from "react";
 
 export default class Student extends Component {
   render() {
-    const { Name, Age, Photo } = this.props;
+    const { name, height, mass } = this.props;
     return (
       <ul className="Students">
-        <li  key="Photo">
-          <img src={Photo} alt={Name} width="100" height="100" />
+         <li key="name">name: {name}</li>
+        <li  key="mass">
+         mass: {mass}
         </li>
-        <li key="Name">Фио: {Name}</li>
-        <li key="Age">Возраст: {Age}</li>
+        <li key="height">height: {height}</li>
       </ul>
     );
   }
