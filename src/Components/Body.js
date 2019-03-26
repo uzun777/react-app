@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import StudentList from "./StudentList";
 import ListOfStudents from "../ListOfStudents";
 import Button from "./Button";
+import PotterStudentList from "./Potter/PotterList";
 
 export default class Body extends Component {
+
+  
   state = {
     pressed: 0,
     lockAll: false,
     text: '',
-    data: []
-
+    data: [],
+    PotterData:[]
   };
 
-
+  
 
   ShowRes = (event) => {
     let value = event.target.value.toLowerCase();
@@ -22,6 +25,12 @@ export default class Body extends Component {
  async componentDidMount(){
    let b = await fetch("https://swapi.co/api/people/").then(r => r.json());   
    this.setState({data: b.results})
+
+    ////// POTTER API
+    const url = "https://www.potterapi.com/v1/characters?key=$2a$10$i88wqSpidj88VFUYbOlffuOK5tMGI.DU6Zs/h7PLNdKVzNIFTefSq"; //Использование URL?
+
+   let p = await fetch(url).then(r=> r.json());
+   this.setState({PotterData: p});  
   }
 
   render() {
@@ -33,8 +42,8 @@ export default class Body extends Component {
     return (
       <div className="body">
         <h6>Список студентов</h6>
-        <div>
-        <input onChange={this.ShowRes} value={this.state.text} />
+        <div id="search">
+        <input type="text" onChange={this.ShowRes} value={this.state.text} />
         <button onClick={
           ()=>{
             this.setState({text:""});
@@ -45,10 +54,13 @@ export default class Body extends Component {
 
        
 
-        {<StudentList data={this.state.data.filter(
+        {/* {<StudentList data={this.state.data.filter(
+          item => item.name.toLowerCase().search(this.state.text) !== -1
+        )} />} */}
+
+          {<PotterStudentList data={this.state.PotterData.filter(
           item => item.name.toLowerCase().search(this.state.text) !== -1
         )} />}
-
 
         <Button
           active={this.state.pressed === 0}

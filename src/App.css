@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 .App-logo {
@@ -33,12 +32,15 @@
   }
 }
 
-.global{
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,0.6923144257703081) 50%);
+.global {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 0.6923144257703081) 50%
+  );
 }
-
-
 
 .top ul {
   text-align: center;
@@ -49,35 +51,27 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0
   background: rgb(243, 166, 0);
 }
 
-ul.MainListMenu li{
-  margin-left:10px;
+ul.MainListMenu li {
+  margin-left: 10px;
   display: inline-block;
 }
 
-
-.Menu ul{
+.Menu ul {
   display: none;
 }
 
-
-
-.Menu:hover ul{
-  padding-left:20px;
-  margin-left: -10px;;
+.Menu:hover ul {
+  padding-left: 20px;
+  margin-left: -10px;
   padding-right: 10px;
   display: inline;
   position: absolute;
-
 }
-  
 
-.Menu ul li{
+.Menu ul li {
   margin-left: -10px;
- display: inline;
+  display: inline;
 }
-
-
-
 
 .Students {
   padding: 0px;
@@ -96,7 +90,7 @@ ul.MainListMenu li{
 }
 
 .bottom {
- /* background-color: rgb(8, 143, 206); */
+  /* background-color: rgb(8, 143, 206); */
   text-align: center;
 }
 
@@ -117,4 +111,28 @@ ul.MainListMenu li{
 
 .bottom .Banner:hover {
   border: 1px solid;
+}
+
+.PotterStudentElements {
+  padding: 0px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.PotterStudentElements ul{
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+
+#search {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search input {
+  text-align: center;
 }
