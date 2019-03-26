@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+import PotterStudentFullInfo from "./PotterStudentFullInfo";
 
 export default class PotterStudent extends Component {
+
   render() {
-    const { name, house, role, school } = this.props;
+    const { name,house,data,change,id } = this.props;
     return (
-      <ul className={name}>
+      <ul className={name} onClick={()=>{
+       change(name);
+        {/*return <PotterStudentFullInfo data={data} name={name}/>*/}
+        }}>
+
         <li key="name">name: {name}</li>
         <li key="house">house: {house}</li>
-        <li key="school">school: {school}</li>
-        <li key="role">role: {role}</li>
       </ul>
     );
   }
