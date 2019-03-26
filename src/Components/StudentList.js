@@ -5,7 +5,7 @@ export default class StudentList extends Component {
    render(){
 
     let StudentElements = this.props.data.map(student =>
-        <Student name={student.name} height={student.height} mass={student.mass}/>)
+        <Student name={student.name} key={student.name} height={student.height} mass={student.mass}/>)
        
     return(
         StudentElements

@@ -7,29 +7,31 @@ export default class Top extends Component {
   render() {
     let d = [
       {
+        id: 1,
         link: "/",
         text: "Главная"
       },
       {
+        id:2,
         link: "",
         text: "Форум"
       }
     ];
     return (
       <div className="top">
-      <ul className="MainListMenu">
-        <li>
-          <Company Name="Site Name"/>
-        </li>
+        <ul className="MainListMenu">
+          <li>
+            <Company Name="Site Name" />
+          </li>
 
-        <li>
-          <LinkList data={d} />
-        </li>
+          <li>
+            <LinkList data={d} />
+          </li>
 
-        <li className="Menu">
-          <Menu />
-        </li>
-      </ul>
+          <li className="Menu">
+            <Menu />
+          </li>
+        </ul>
       </div>
     );
   }

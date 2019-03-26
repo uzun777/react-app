@@ -26,12 +26,10 @@ export default class Body extends Component {
 
   render() {
 
-    const newData = ListOfStudents.filter(
+     ListOfStudents.filter(
       item => item.Name.toLowerCase().search(this.state.text) !== -1
     );
    
-     console.log(this.state.data)
-
     return (
       <div className="body">
         <h6>Список студентов</h6>

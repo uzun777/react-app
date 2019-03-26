@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Top from './Components/Top'
 import Body from './Components/Body'
