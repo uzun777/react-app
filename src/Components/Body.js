@@ -3,7 +3,6 @@ import StudentList from "./StudentList";
 import ListOfStudents from "../ListOfStudents";
 import Button from "./Button";
 import PotterStudentList from "./Potter/PotterStudentList";
-import PotterStudentFullInfo from "./Potter/PotterStudentFullInfo";
 
 export default class Body extends Component {
   state = {
@@ -37,10 +36,6 @@ export default class Body extends Component {
       item => item.Name.toLowerCase().search(this.state.text) !== -1
     );
 
-    console.log("RR", this.state.PotterData, this.state.PotterData.filter(
-              item => item.name.toLowerCase().search(this.state.text) !== -1
-            ))
-
     return (
       <div className="body">
         <h6>Список студентов</h6>
@@ -65,12 +60,9 @@ export default class Body extends Component {
               item => item.name.toLowerCase().search(this.state.text) !== -1
             )}
             change={id => {
-              this.setState(
-                {
-                  id
-                },
-                console.log("ID FROM BODY", id)
-              );
+              this.setState({
+                id
+              });
             }}
             id={this.state.id}
           />
@@ -83,7 +75,8 @@ export default class Body extends Component {
             !this.state.lockAll &&
             this.setState({
               pressed: 0
-            })}
+            })
+          }
         />
 
         <Button
@@ -93,7 +86,8 @@ export default class Body extends Component {
             !this.state.lockAll &&
             this.setState({
               pressed: 1
-            })}
+            })
+          }
         />
 
         <Button
@@ -103,7 +97,8 @@ export default class Body extends Component {
             !this.state.lockAll &&
             this.setState({
               pressed: 2
-            })}
+            })
+          }
         />
 
         <Button
@@ -112,7 +107,8 @@ export default class Body extends Component {
           onClick={() =>
             this.setState({
               lockAll: !this.state.lockAll
-            })}
+            })
+          }
         />
       </div>
     );
