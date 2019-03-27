@@ -3,39 +3,36 @@ import StudentList from "./StudentList";
 import ListOfStudents from "../ListOfStudents";
 import Button from "./Button";
 import PotterList from "./Potter/PotterList";
+import PotterStudentFullInfo from "./Potter/PotterStudentFullInfo";
 
 export default class Body extends Component {
-
-
   state = {
     pressed: 0,
     lockAll: false,
-    text: '',
+    text: "",
     data: [],
     PotterData: [],
     id: null
   };
 
-
-
-  ShowRes = (event) => {
+  ShowRes = event => {
     let value = event.target.value.toLowerCase();
     this.setState({ text: value });
-  }
+  };
 
   async componentDidMount() {
     let b = await fetch("https://swapi.co/api/people/").then(r => r.json());
-    this.setState({ data: b.results })
+    this.setState({ data: b.results });
 
     ////// POTTER API
-    const url = "https://www.potterapi.com/v1/characters?key=$2a$10$i88wqSpidj88VFUYbOlffuOK5tMGI.DU6Zs/h7PLNdKVzNIFTefSq"; //Использование URL?
+    const url =
+      "https://www.potterapi.com/v1/characters?key=$2a$10$i88wqSpidj88VFUYbOlffuOK5tMGI.DU6Zs/h7PLNdKVzNIFTefSq"; //Использование URL?
 
     let p = await fetch(url).then(r => r.json());
     this.setState({ PotterData: p });
   }
 
   render() {
-
     ListOfStudents.filter(
       item => item.Name.toLowerCase().search(this.state.text) !== -1
     );
@@ -45,32 +42,32 @@ export default class Body extends Component {
         <h6>Список студентов</h6>
         <div id="search">
           <input type="text" onChange={this.ShowRes} value={this.state.text} />
-          <button onClick={
-            () => {
+          <button
+            onClick={() => {
               this.setState({ text: "" });
-
-            }
-          }>Clear</button>
+            }}
+          >
+            Clear
+          </button>
         </div>
-
-
 
         {/* {<StudentList data={this.state.data.filter(
           item => item.name.toLowerCase().search(this.state.text) !== -1
         )} />} */}
 
-        {<PotterList data={this.state.PotterData.filter(
-          item => item.name.toLowerCase().search(this.state.text) !== -1
-        )} 
-        
-        change={(id) => {
-
-          this.setState(
-            {
-              id
-            }, () => console.log(this.state.id)
-          )
-        }} id={this.state.id} />}
+        {
+          <PotterList
+            data={this.state.PotterData.filter(
+              item => item.name.toLowerCase().search(this.state.text) !== -1
+            )}
+            change={id => {
+              this.setState({
+                id
+              });
+            }}
+            id={this.state.id}
+          />
+        }
 
         <Button
           active={this.state.pressed === 0}
@@ -110,7 +107,7 @@ export default class Body extends Component {
           label="Заблокировать Кнопки"
           onClick={() =>
             this.setState({
-              lockAll: !this.state.lockAll,
+              lockAll: !this.state.lockAll
             })
           }
         />
