@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Sort from "./Components/Sort"
 import Top from "./Components/Top";
 import Body from "./Components/Body";
 import Bottom from "./Components/Bottom";
@@ -7,10 +8,13 @@ import PotterStudentFullInfo from "./Components/Potter/PotterStudentFullInfo";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
+  
   return (
+Sort(["123","456"]),
     <Router>
       <div className="global">
         <Top myName="Company Name" />
+    
         <switch>
           <Route path="/" exact component={Body} />
 
@@ -28,6 +32,13 @@ function App() {
                     house: "1",
                     school: "2",
                     role: "Author, A History Of Magic"
+                  },
+                  {
+                    _id: "5a0fa60aae5bc100213c2332",
+                    name: "Bathilda Bagshot 2",
+                    house: "1",
+                    school: "2",
+                    role: "Author, A History Of Magic"
                   }
                 ]}
               />
@@ -38,6 +49,7 @@ function App() {
         <Bottom />
       </div>
     </Router>
+  
   );
 }
 

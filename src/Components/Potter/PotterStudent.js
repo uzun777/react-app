@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export default class PotterStudent extends Component {
   render() {
-    const { name, house, change, _id:id } = this.props;
-    
+    const { name, house, change, _id: id } = this.props;
+
     return (
       <ul
         className={name}

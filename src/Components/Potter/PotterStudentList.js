@@ -8,7 +8,7 @@ export default class PotterStudentList extends Component {
     let PotterStudentElements = this.props.data.map(student => (
       <PotterStudent {...student} key={student._id} change={change} />
     ));
-       console.log(data, id);
+    console.log(data, id);
     return id === null ? (
       <ul className="PotterStudentElements">{PotterStudentElements}</ul>
     ) : (

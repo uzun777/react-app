@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StudentList from "./StudentList";
+import StudentList from "./Student/StudentList";
 import ListOfStudents from "../ListOfStudents";
 import Button from "./Button";
 import PotterStudentList from "./Potter/PotterStudentList";

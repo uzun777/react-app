@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Link from "./Link";
+import Link from "../Link/Link";
 
 export default class MenuElements extends Component {
   render() {

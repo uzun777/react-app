@@ -2,13 +2,11 @@ import React, { Component } from "react";
 
 export default class PotterStudentFullInfo extends Component {
   render() {
-
-    // let idFromUrl = this.props.match.params.idFromUrl;
     let idFromUrl = this.props.match.params.idFromUrl;
-    console.log("id from url", idFromUrl)
+    console.log("id from url", idFromUrl);
 
     let { data, id } = this.props;
-    let oneEl = data.filter(item => item._id === id); ///Тут не правильно фильтрует
+    let oneEl = data.filter(item => item._id === idFromUrl); /// id
     const { name, house, role, school } = oneEl[0];
 
     return (

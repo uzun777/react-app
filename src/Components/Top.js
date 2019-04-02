@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Menu from "./Menu";
+import Menu from "./Menu/Menu";
 import Company from "./CompanyName";
-import LinkList from "./LinkList";
+import LinkList from "./Link/LinkList";
 
 export default class Top extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class Top extends Component {
         text: "Главная"
       },
       {
-        id:2,
+        id: 2,
         link: "",
         text: "Форум"
       }
