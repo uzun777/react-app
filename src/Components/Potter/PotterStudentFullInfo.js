@@ -1,13 +1,28 @@
 import React, { Component } from "react";
 
 export default class PotterStudentFullInfo extends Component {
-  render() {
-    let idFromUrl = this.props.match.params.idFromUrl;
-    console.log("id from url", idFromUrl);
 
-    let { data, id } = this.props;
-    let oneEl = data.filter(item => item._id === idFromUrl); /// id
-    const { name, house, role, school } = oneEl[0];
+
+state ={
+  PotterData:{}
+}
+
+
+ async componentDidMount() {
+
+    ////// POTTER API
+    const url =
+      "https://www.potterapi.com/v1/characters/"+this.props.match.params.idFromUrl+"?key=$2a$10$i88wqSpidj88VFUYbOlffuOK5tMGI.DU6Zs/h7PLNdKVzNIFTefSq"; //Использование URL?
+    
+    let p = await fetch(url).then(r => r.json());
+    this.setState({ PotterData: p });
+  }
+
+
+  render() {
+
+    const {id, name, house, role, school } = this.state.PotterData;
+    //  
 
     return (
       <ul className={name}>

@@ -19,28 +19,12 @@ Sort(["123","456"]),
           <Route path="/" exact component={Body} />
 
           <Route
-            path="/people/id=:idFromUrl"
+            path="/people/:idFromUrl"
             
             render={props => (
               <PotterStudentFullInfo
                 {...props}
-                id="5a0fa60aae5bc100213c2331"
-                data={[
-                  {
-                    _id: "5a0fa60aae5bc100213c2331",
-                    name: "Bathilda Bagshot",
-                    house: "1",
-                    school: "2",
-                    role: "Author, A History Of Magic"
-                  },
-                  {
-                    _id: "5a0fa60aae5bc100213c2332",
-                    name: "Bathilda Bagshot 2",
-                    house: "1",
-                    school: "2",
-                    role: "Author, A History Of Magic"
-                  }
-                ]}
+                
               />
             )}
           />
