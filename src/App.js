@@ -5,6 +5,7 @@ import Top from "./Components/Top";
 import Body from "./Components/Body";
 import Bottom from "./Components/Bottom";
 import PotterStudentFullInfo from "./Components/Potter/PotterStudentFullInfo";
+import CatsPage from "./Components/Cat/CatsPage";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,19 @@ Sort(["123","456"]),
               />
             )}
           />
+
+            <Route
+            path="/cats/:page/:limit"
+            
+            render={props => (
+              <CatsPage
+                {...props}
+                
+              />
+            )}
+          />
+
+
         </switch>
         {/*<Body>*/}
         <Bottom />
