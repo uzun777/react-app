@@ -7,11 +7,16 @@ import Bottom from "./Components/Bottom";
 import PotterStudentFullInfo from "./Components/Potter/PotterStudentFullInfo";
 import CatsPage from "./Components/Cat/CatsPage";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import counterReducer  from './modules/counter/reducer'
+const store = createStore( counterReducer,0)
+
 
 function App() {
   
   return (
-Sort(["123","456"]),
+    <Provider store={store}>
     <Router>
       <div className="global">
         <Top myName="Company Name" />
@@ -47,8 +52,9 @@ Sort(["123","456"]),
         <Bottom />
       </div>
     </Router>
-  
+    </Provider>
   );
+ 
 }
 
 export default App;
