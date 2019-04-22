@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Menu from "./Menu/Menu";
-import Company from "./CompanyName";
+import Company from "./Company/CompanyName";
 import LinkList from "./Link/LinkList";
 
 export default class Top extends Component {

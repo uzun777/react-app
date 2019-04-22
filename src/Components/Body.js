@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import StudentList from "./Student/StudentList";
 import ListOfStudents from "../ListOfStudents";
-import Button from "./Button";
+import Button from "./Button/Button";
 import PotterStudentList from "./Potter/PotterStudentList";
 
 export default class Body extends Component {

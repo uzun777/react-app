@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 export default class CatElement extends Component {
   render() {
@@ -8,7 +7,7 @@ export default class CatElement extends Component {
     return (
       // <Link to={`/people/${id}`}>
       <div className="Cat-Element">
-        <img src={url} width="500px" height="500px" />
+        <img src={url} width="500px" height="500px" alt={breeds} />
         <p>{`id: ${id}`}</p>
         <p>{`breeds: ${breeds}`}</p>
         <p>{`width: ${width}`}</p>

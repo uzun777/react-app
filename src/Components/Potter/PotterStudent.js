@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export default class PotterStudent extends Component {
   render() {
-    const { name, house, change, _id: id } = this.props;
+    const { name, house, _id: id } = this.props;
 
     return (
       <Link to={`/people/${id}`}>

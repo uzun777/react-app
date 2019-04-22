@@ -21,7 +21,7 @@ state ={
 
   render() {
 
-    const {id, name, house, role, school } = this.state.PotterData;
+    const {name, house, role, school } = this.state.PotterData;
     //  
 
     return (
