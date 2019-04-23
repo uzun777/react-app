@@ -7,12 +7,8 @@ import PotterStudentFullInfo from "./Components/Potter/PotterStudentFullInfo";
 import CatsPage from "./Components/Cat/CatsPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { counterReducer } from "./modules/counter/reducer";
-
+import {store} from './configureStore'
 import { Counter } from "./Components/Counter/Counter";
-
-const store = createStore(counterReducer, {name:"Ivan", value:12});
 
 
 store.subscribe(()=>{

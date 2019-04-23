@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { increase, decrease } from "../../modules/counter/actions";
 
-const mapState = state => ({ count: state.value, text: state.name });
+const mapState = state => ({ value: state.counter.value});
 
 const mapDispatch = dispatch => ({
   increase: () => dispatch(increase()),
@@ -13,12 +13,11 @@ export const Counter = connect(
   mapState,
   mapDispatch
 )(props => {
-  const { increase, decrease, count, text } = props;
+  const { increase, decrease, value } = props;
   return (
     <div>
       <button onClick={increase}>+</button>
-      <p>Число: {count}</p>
-      <p>Строка: {text}</p>
+      <p>Число: {value}</p>
       <button onClick={decrease}>-</button>
     </div>
   );
