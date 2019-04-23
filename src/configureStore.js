@@ -1,7 +1,8 @@
 import { createStore,combineReducers,compose,applyMiddleware } from "redux";
 import { counterReducer} from "./modules/counter/counterReducer";
+import {catsReducer} from './modules/cats/catsReducer'
 
-const mainReducer = combineReducers({counter:counterReducer})
+const mainReducer = combineReducers({counter:counterReducer, catlist:catsReducer})
 
 const middleware=[];
 
