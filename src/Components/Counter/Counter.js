@@ -8,7 +8,7 @@ const mapDispatch = dispatch => ({
   increase: () => dispatch(increase()),
   decrease: () => dispatch(decrease())
 });
-
+//store.dispatch({type,payload})
 export const Counter = connect(
   mapState,
   mapDispatch
