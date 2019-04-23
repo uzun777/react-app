@@ -2,13 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { increase, decrease } from "../../modules/counter/actions";
 
-const mapState = state => ({ value: state.counter.value});
+const mapState = state => ({ value: state.counter.value });
 
 const mapDispatch = dispatch => ({
   increase: () => dispatch(increase()),
   decrease: () => dispatch(decrease())
 });
-//store.dispatch({type,payload})
 export const Counter = connect(
   mapState,
   mapDispatch

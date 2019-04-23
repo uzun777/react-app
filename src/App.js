@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from "react";
 import "./App.css";
 import Top from "./Components/Top";
@@ -23,8 +24,7 @@ function App() {
           <Top myName="Company Name" />
 
           <switch>
-            <Route path="/">
-              <Body/>
+            <Route exact path="/" component={Body}>
               <Counter />
             </Route>
 
@@ -34,7 +34,7 @@ function App() {
             />
 
             <Route
-              path="/cats/:page/:limit"
+              path="/cats"
               render={props => <CatsPage {...props} />}
             />
           </switch>

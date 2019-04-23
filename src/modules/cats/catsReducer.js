@@ -1,8 +1,7 @@
-export const catsReducer = (state={currentPage:1, filter:''}, action) => {
-  const { value } = state;
+export const catsReducer = (state={activePage:1, filter:'',}, action) => {
   switch (action.type) {
     case "CHANGE_PAGE":
-      return { ...state, currentPage: action.payload };
+      return { ...state, activePage: action.payload };
 
  case "FILTER_RESULTS":
       return { ...state, filter: action.payload };
