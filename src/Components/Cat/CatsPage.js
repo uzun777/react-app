@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import CatElement from "./CatElement";
 import Paginator from "../Paginator/Paginator";
 
+import { connect } from "react-redux";
+import { loading, loaded, notLoaded } from "../../modules/cats/actions";
+
+const mapState = state => ({ value: state.counter.value});
+
+const mapDispatch = dispatch => ({
+  loading: () => dispatch(loading()),
+  load: () => dispatch(load()),
+  notLoaded: () => dispatch(notLoaded())
+});
+
 export default class CatsPage extends Component {
   state = {
     Data: []
