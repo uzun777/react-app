@@ -9,10 +9,10 @@ export const loading = ()=>{
     return {type:'LOADING'}
 }
 
-export const load = (catList,pageCount) =>{
- return {type:'LOAD' , payload:(catList,pageCount)}
+export const load = (list,pageCount) =>{
+ return {type:'LOAD' , payload:{list,pageCount}}
 }
 
-export const notLoaded = (p) =>{
- return {type:'NOT_LOADED' , payload:p}
+export const notLoaded = (error) =>{
+ return {type:'NOT_LOADED' , payload:error}
 }

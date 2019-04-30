@@ -12,10 +12,6 @@ import {store} from './configureStore'
 import { Counter } from "./Components/Counter/Counter";
 
 
-store.subscribe(()=>{
- console.log('subscribe',store.getState())
-});
-
 function App() {
   return (
     <Provider store={store}>
@@ -24,8 +20,9 @@ function App() {
           <Top myName="Company Name" />
 
           <switch>
-            <Route exact path="/" component={Body}>
-              <Counter />
+            <Route exact path="/" component={Body} >
+         
+            {/* <Counter /> */}
             </Route>
 
             <Route
@@ -34,7 +31,7 @@ function App() {
             />
 
             <Route
-              path="/cats"
+              path="/cats/:page"
               render={props => <CatsPage {...props} />}
             />
           </switch>

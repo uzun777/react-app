@@ -1,10 +1,12 @@
 import { createStore,combineReducers,compose,applyMiddleware } from "redux";
 import { counterReducer} from "./modules/counter/counterReducer";
 import {catsReducer} from './modules/cats/catsReducer'
+import thunk from 'redux-thunk';
+
 
 const mainReducer = combineReducers({counter:counterReducer, catlist:catsReducer})
 
-const middleware=[];
+const middleware=[thunk];
 
 
 const composeEnhancers =
