@@ -127,3 +127,22 @@ ul.MainListMenu li {
 #search input {
   text-align: center;
 }
+
+
+.peopleInfo{
+  display: flex;
+  justify-content: center;
+}
+
+#peopleCart{
+  outline: 2px solid #000; /* Чёрная рамка */
+  margin: 10px;
+  padding: 10px;
+  list-style-type: none;
+
+
+  background: #fc0; /* Цвет фона */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+
+}
