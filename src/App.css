@@ -132,7 +132,12 @@ ul.MainListMenu li {
 .peopleInfo{
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  max-width: 150px;
+  margin: auto;
 }
+
 
 #peopleCart{
   outline: 2px solid #000; /* Чёрная рамка */

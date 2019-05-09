@@ -25,11 +25,10 @@ export const catsReducer = (
       };
 
     case "NOT_LOADED":
-    console.log("REDUCER",action.payload)
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        error: action.payload
       };
 
     default:
