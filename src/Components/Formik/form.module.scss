@@ -1,0 +1,19 @@
+.error {
+  border-color: #dc3545;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    form{
+        display: contents;
+        input,div{
+            display: flex;
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+}

@@ -11,7 +11,8 @@ import { Provider } from "react-redux";
 import CreateStore from "./configureStore";
 import { Counter } from "./Components/Counter/Counter";
 import { PersistGate } from "redux-persist/integration/react";
-import PeopleList from "./Components/Form/PeopleList";
+import {PeopleList} from "./Components";
+import {MyForm} from './Components'
 
 const { store, persistor } = CreateStore();
 
@@ -34,7 +35,8 @@ function App() {
               />
               <Route
                 path="/form/"
-                render={props => <PeopleList {...props} />}
+                render={props => <MyForm {...props} />}
+                // render={props => <PeopleList {...props} />}
               />
 
               <Route

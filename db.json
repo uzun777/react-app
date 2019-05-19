@@ -1,9 +1,34 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": [{ "id":25, "secondName":"Ivanov", "name": "Ivan", "age":25 }, { "id":5, "secondName":"Petrov", "name": "Petr", "age":28 }]
+  "profile": [
+    {
+      "email": "uzun@null.net",
+      "password": "1234567",
+      "First Name": "Yuri",
+      "Last Name": "Uzun",
+      "age": "22",
+      "id": 26
+    },
+    {
+      "email": "pem9@mail.ru",
+      "password": "df6s54fd6s4fsd6",
+      "First Name": "Jhon",
+      "Last Name": "Smith",
+      "age": "45",
+      "id": 27
+    }
+  ]
 }
