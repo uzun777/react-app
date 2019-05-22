@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ListOfStudents from "../ListOfStudents";
 import Button from "./Button/Button";
 import PotterStudentList from "./Potter/PotterStudentList";
 
@@ -31,10 +30,6 @@ export default class Body extends Component {
   }
 
   render() {
-    ListOfStudents.filter(
-      item => item.Name.toLowerCase().search(this.state.text) !== -1
-    );
-
     return (
       <div className="body">
         <h6>Список студентов</h6>
@@ -48,10 +43,6 @@ export default class Body extends Component {
             Clear
           </button>
         </div>
-
-        {/* {<StudentList data={this.state.data.filter(
-          item => item.name.toLowerCase().search(this.state.text) !== -1
-        )} />} */}
 
         {
           <PotterStudentList

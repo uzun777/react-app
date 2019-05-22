@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import style from "./form.module.scss";
 
 export default class People extends Component {
   render() {
@@ -6,7 +7,7 @@ export default class People extends Component {
 
     return (
      // <Link to={`/people/${id}`}>
-      <ul id="peopleCart">
+      <ul className={id===-1? style.loading: style.card}>
         <li key="id">id: {id}</li>
         <li key="name">First Name: {name}</li>
         <li key="secondName">Last Name: {secondName}</li>

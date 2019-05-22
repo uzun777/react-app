@@ -3,8 +3,6 @@ import CatElement from "./CatElement";
 import { connect } from "react-redux";
 import Pagination from "react-js-pagination";
 import { loadCatData } from "../../modules/cats/asyncActions";
-import {withRouter} from 'react-router'
-
 import { loading, load, notLoaded } from "../../modules/cats/actions";
 
 const mapState = state => ({ ...state.catlist });
@@ -15,14 +13,13 @@ const mapDispatch = dispatch => ({
   loadCatData: page => dispatch(loadCatData(page))
 });
 
-
 class CatsPage extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      activePage:this.props.match.params.page
-    };}
+      activePage: this.props.match.params.page
+    };
+  }
 
   componentDidMount() {
     this.props.loadCatData(this.props.match.params.page);
@@ -30,23 +27,22 @@ class CatsPage extends Component {
 
   handlePageChange(pageNumber) {
     this.props.loadCatData(pageNumber);
-    this.setState({activePage: pageNumber});
-    this.props.history.push(`/cats/${pageNumber}`)
+    this.setState({ activePage: pageNumber });
+    this.props.history.push(`/cats/${pageNumber}`);
   }
 
   render() {
     // console.log("TEST13", this.props.list.value)
-    let listOfCats = this.props.list? this.props.list.map((cat)=>(
-      <CatElement {...cat} />
-    )):null;
-    
+    let listOfCats = this.props.list
+      ? this.props.list.map(cat => <CatElement {...cat} />)
+      : null;
+
     //
 
     return (
       console.log("TEST12", this.state),
-      
       (
-        <div className="Cats"> 
+        <div className="Cats">
           {listOfCats}
           <div className="d-flex justify-content-center">
             <Pagination

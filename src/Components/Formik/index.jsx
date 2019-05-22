@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { SignupSchema } from "./schema";
 import style from "./form.module.scss";
-
 import { People } from "../index";
 import { loading, load, notLoaded } from "../../modules/peoples/actions";
 import { loadData } from "../../modules/peoples/AsyncPeopleActions";
@@ -29,7 +28,19 @@ export class FormikForm extends Component {
   }
 
   handleSubmit = values => {
-    console.log("RRs", values);
+
+    this.setState({
+      data: {
+        email: values.email,
+        password: values.password,
+        "First Name": values.firstName,
+        "Last Name": values.lastName,
+        age: values.age,
+        id: -1
+      }
+    });
+
+
     fetch("http://localhost:3004/profile", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -41,18 +52,24 @@ export class FormikForm extends Component {
         "Last Name": values.lastName,
         age: values.age
       })
-    });
-    this.setState({
-      data: {
-        email: values.email,
-        password: values.password,
-        name: values.firstName,
-        secondName: values.lastName,
-        age: values.age,
-        id: -1
-      }
-    });
-    console.log("DDDD", this.state);
+    })
+      .then(response => response.json())
+      .then(responseJson => {
+        this.setState({
+          data: {
+            email: values.email,
+            password: values.password,
+            "First Name": values.firstName,
+            "Last Name": values.lastName,
+            age: values.age,
+            id: responseJson.id
+          }
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
   };
 
   render() {
@@ -138,10 +155,10 @@ export class FormikForm extends Component {
           </Formik>
         </div>
 
-        <div>
-          {this.state.data != null ? (
-            <People {...this.state.data} key="Fake" />
-          ) : null}
+        <div className={style.cards}>
+          {this.state.data != null ?( this.state.data.id === undefined ? 
+            <People {...this.state.data} key="Fake" /> :  <People {...this.state.data} key={this.state.data.id} />)
+           : null}
           {this.props.list.map((
             people //this.props.list.
           ) => (
